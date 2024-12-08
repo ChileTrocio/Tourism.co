@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tourism.co</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        header {
+            position: absolute;
+            width: 100%;
+            top: 0;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 36px;
+            color: lightblue;
+            display: flex;
+            align-items: center;
+        }
+        h1 span {
+            margin-left: 10px;
+            font-size: 36px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: orange;
+        }
+        .hero {
+            height: 100vh;
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 0 50px;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            color: white;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://ik.imagekit.io/tvlk/blog/2024/08/3-1024x683.webp?tr=dpr-2,w-675');
+            background-size: cover;
+            background-position: center;
+            animation: fadeBackground 35s infinite;
+            z-index: -1;
+        }
+        @keyframes fadeBackground {
+            0% {
+                background-image: url('https://handluggageonly.co.uk/wp-content/uploads/2018/12/Hand-Luggage-Only-10-5.jpg');
+            }
+            20% {
+                background-image: url('https://images.saymedia-content.com/.image/t_share/MjAzMDI5MjI3NjMxNTUxNjcw/top-10-tourist-destination-in-the-philippines.jpg');
+            }
+            50% {
+                background-image: url('https://www.beholdphilippines.com/wp-content/uploads/2021/10/Paoay-Shining-Mom.jpg');
+            }
+            75% {
+                background-image: url('https://www.whatdoyousea.com/wp-content/uploads/2018/03/kawasanfallscebuftb.jpg');
+            }
+            100% {
+                background-image: url('https://blog.mabuhaytravel.uk/wp-content/uploads/2024/07/boracay.jpg');
+            }
+        }
+        .hero h2 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 600px;
+        }
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px;
+            background-color: #fff;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: #f9f9f9;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .card img:hover {
+            transform: scale(1.1);
+        }
+        .card h3 {
+            font-size: 24px;
+            margin: 15px 0;
+            color: #333;
+        }
+        .card p {
+            font-size: 16px;
+            color: #666;
+            padding: 0 15px;
+            margin-bottom: 15px;
+        }
+        .card a {
+            display: block;
+            padding: 15px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-top: 1px solid #ddd;
+        }
+        .card a:hover {
+            background-color: #0056b3;
+        }
+        .contact {
+            padding: 50px;
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+        }
+        .contact h2 {
+            margin-bottom: 20px;
+        }
+        .contact p {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+		    Tourism.co
+			<span>✈️</span>
+		</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <h2>WELCOME</h2>
+        <p>The country has many attractions, including beautiful beaches,<br>impressive mountains and a rich cultural heritage. Every year,<br>millions of tourists flock to the islands of the Philippines<br>to explore its breathtaking beauty and indulge in its offerings.</p>
+    </section>
+
+<section id="about" style="padding: 50px; background-image: url('https://images.travelandleisureasia.com/wp-content/uploads/sites/2/2022/12/12153020/Philippines-Tourism-1600x900.jpg'); background-size: cover; background-position: center; color: white;">
+    <div style="max-width: 1200px; margin: 0 auto; padding-left: 50px; text-align: left;">
+        <h2 style="font-size: 48px; margin-bottom: 20px;">About Us</h2>
+        <p style="font-size: 22px; line-height: 1.6;">
+            We are a passionate team dedicated to showcasing the beauty of the Philippines. From pristine beaches to lush mountain retreats, we curate experiences that help you discover the best destinations. Our mission is to provide travelers with the most authentic, memorable, and enriching experiences, whether you're seeking adventure or relaxation. Join us on a journey to explore the wonders of this beautiful country.
+        </p>
+    </div>
+</section>
+
+<section id="destinations" style="padding: 50px; background-image: url('https://greenglobaltravel.com/wp-content/uploads/2019/12/Most-Beautiful-Places-in-the-Philippines-to-Visit.jpg'); background-size: cover; background-position: center; color: white; text-align: center;">
+    <h2 style="margin-bottom: 30px; font-size: 36px;">Popular Destinations</h2>
+    <div class="card-container">
+        <div class="card">
+            <img src="https://www.felizhotelboracay.com/wp-content/uploads/2022/10/boracay-1.jpg" alt="boracay Beach">
+            <h3>Boracay Beach</h3>
+            <p>Boracay, one of the top Islands in the
+			Philippines, is popular for its beaches and
+			blessed with a long stretch of powdery white
+			sand, crystal clear and azure waters, and a
+			stunning sunset.</p>
+            <a href="https://guidetothephilippines.ph/articles/ultimate-guides/boracay-white-beach-guide">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Mt.Mayon_tam3rd.jpg/800px-Mt.Mayon_tam3rd.jpg" alt="Mount Mayon">
+            <h3>Mount Mayon</h3>
+            <p>An active volcano in the Philippines, is famous
+			for its perfect symmetrical cone shape. It offers
+			breathtaking views, hiking, and adventure
+			activities, attracting visitors seeking natural
+			beauty and thrill.</p>
+            <a href="https://guidetothephilippines.ph/articles/ultimate-guides/mayon-volcano-guide-albay-bicol">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="https://img1.advisor.travel/1200x630px-Banaue_Rice_Terraces_8.jpg" alt="Banaue Rice Terraces">
+            <h3>Banaue Rice Terraces</h3>
+            <p>Over 2,000-year-old rice terraces carved into
+			mountains by indigenous Ifugao people. This
+			UNESCO World Heritage site offers a glimpse
+			into ancient agricultural practices and scenic
+			mountain landscapes.</p>
+            <a href="https://guidetothephilippines.ph/articles/ultimate-guides/banaue-travel-guide">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="https://i0.wp.com/geologyscience.com/wp-content/uploads/2023/04/Chocolate-Hills.jpeg?fit=1600%2C1067&ssl=1" alt="Bohol Chocolate Hills">
+            <h3>Bohol Chocolate Hills</h3>
+            <p>A unique geological formation of over 1,200
+			grass-covered hills that turn brown during dry
+			season. This captivating natural wonder
+			attracts hikers, photographers, and nature
+			lovers year-round.</p>
+            <a href="https://guidetothephilippines.ph/articles/ultimate-guides/chocolate-hills-bohol-travel-guide">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/7d/39/5f/caption.jpg?w=800&h=800&s=1" alt="Palawan">
+            <h3>Palawan</h3>
+            <p>A UNESCO World Heritage site, features
+			crystal-clear waters, dramatic limestone cliffs,
+			and the Underground River. It offers scenic
+			beauty, rich marine life, perfect for both
+			adventure and relaxation.</p>
+            <a href="https://guidetothephilippines.ph/articles/ultimate-guides/palawan-travel-guide">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/2d/12/f7.jpg" alt="Puerto Princesa Subterranean River National Park">
+            <h3>Puerto Princesa Subterranean River National Park</h3>
+            <p>Features an 8.2-kilometer underground river
+			flowing through limestone caves. Surrounded
+			by lush forests, it’s home to diverse wildlife and
+			stunning natural beauty.</p>
+            <a href="https://guidetothephilippines.ph/articles/ultimate-guides/puerto-princesa-underground-river-palawan-guide">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="https://cdn.tatlerasia.com/asiatatler/i/ph/2021/05/14120924-untitled_cover_1085x694.png" alt="Historic City of Vigan">
+            <h3>Historic City of Vigan</h3>
+            <p>A UNESCO World Heritage site, is famous for
+			its well-preserved Spanish colonial
+			architecture, cobblestone streets, traditional
+			carriages, and the fusion of European and local
+			cultures.</p>
+            <a href="https://guidetothephilippines.ph/articles/ultimate-guides/vigan-ilocos-travel-guide">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="https://theincoherentellipsis.wordpress.com/wp-content/uploads/2013/12/imgp0153b.jpg" alt="Intramuros">
+            <h3>Intramuros</h3>
+            <p>Manila’s historic walled city from the Spanish
+			colonial era, features cobblestone streets,
+			centuries-old churches, and Fort Santiago. It’s
+			a cultural hub, showcasing the Philippines' rich
+			colonial heritage.</p>
+            <a href="https://guidetothephilippines.ph/articles/ultimate-guides/intramuros-manila-travel-guide">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/RAINBOW_BEHIND_...Paoay_church.jpg/2560px-RAINBOW_BEHIND_...Paoay_church.jpg" alt="Paoay Church">
+            <h3>Paoay Church</h3>
+            <p>located in Ilocos Norte, was built in the 17th
+			century. Its unique blend of Gothic, Baroque,
+			and Oriental styles, along with massive coral
+			stone walls, showcases Philippine colonial-era
+			design.</p>
+            <a href="https://guidetothephilippines.ph/destinations-and-attractions/paoay-church">Learn More</a>
+        </div>
+        <div class="card">
+            <img src="https://www.easybook.com/images/destination/Philippines/Manila/RizalPark/RIP.jpg" alt="Rizal Park">
+            <h3>Rizal Park</h3>
+            <p>located in Manila, honors national hero José 
+			Rizal. This historic park features beautiful
+			gardens, monuments, and statues, offering a
+			serene spot for relaxation and learning about
+			Philippine history.</p>
+            <a href="https://guidetothephilippines.ph/destinations-and-attractions/rizal-park-and-monument">Learn More</a>
+        </div>
+</section>
+
+<section id="contact" style="padding: 50px; background-color: #007BFF; color: white;">
+    <h2 style="text-align: center; margin-bottom: 30px;">Meet Our Team</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px;">
+        <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: white; color: #333;">
+            <img src="https://scontent.fdvo2-1.fna.fbcdn.net/v/t39.30808-6/422848520_368545912481499_7830858887846428945_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeHMQFJ9_fUebWwh1OU6ziRklG9GZ9Md1p2Ub0Zn0x3WnRe1VTTVM9L8qRjM5AVFYzSt0mmMDi7-65rPv-pXtYZa&_nc_ohc=-MwZWO9mIncQ7kNvgF1Wtaa&_nc_zt=23&_nc_ht=scontent.fdvo2-1.fna&_nc_gid=A1J0RFZQ3PHufpdr4JPOhaD&oh=00_AYCyxy4eeahe0Ioigvx_QX1thgiJQUaFzbpKkbgvAbbPtQ&oe=67597510" alt="Team Member 1" style="width: 100%; height: 200px; object-fit: cover;">
+            <h3 style="font-size: 20px; margin: 10px 0; color: #007BFF;">Chile Anthony H. Trocio</h3>
+            <p style="font-size: 16px; color: #666; margin-bottom: 15px;">Coding</p>
+            <a href="https://www.facebook.com/profile.php?id=100079782781338" target="_blank" style="display: block; padding: 10px; background-color: #007BFF; color: white; text-decoration: none; font-weight: bold; border-top: 1px solid #ddd;">Facebook Page</a>
+        </div>
+        <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: white; color: #333;">
+            <img src="https://scontent.fdvo2-2.fna.fbcdn.net/v/t39.30808-6/469106935_122179692518149592_4091851917419329132_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGu2n_X55Mb1XeZrcpRiDL3UdHab_vRGW5R0dpv-9EZboeKZdcf0TOxmJpynzIMi-U3wIBeV5LOcr_xf6ZL18Gx&_nc_ohc=a150CPSj1BMQ7kNvgG_jp0A&_nc_zt=23&_nc_ht=scontent.fdvo2-2.fna&_nc_gid=AzsyrNZ55XMF_S-cypBC8OL&oh=00_AYCuYPPGnVOLg_gGk2G4IAYiAb-nOlzUjvqnscuZhPyySg&oe=675ABC76" alt="Team Member 2" style="width: 100%; height: 200px; object-fit: cover;">
+            <h3 style="font-size: 20px; margin: 10px 0; color: #007BFF;">Xyrelle Kate L. Pamisa</h3>
+            <p style="font-size: 16px; color: #666; margin-bottom: 15px;">Destination Information</p>
+            <a href="https://www.facebook.com/yxrll.hskjsjsk.ii" target="_blank" style="display: block; padding: 10px; background-color: #007BFF; color: white; text-decoration: none; font-weight: bold; border-top: 1px solid #ddd;">Facebook Page</a>
+        </div>
+        <div style="border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); background-color: white; color: #333;">
+            <img src="https://scontent.fdvo2-1.fna.fbcdn.net/v/t39.30808-6/461323165_2066277843770178_2402840628932404990_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHUxh3ZqRZ1DAcbl9v7vL_WDuEp_MgZn4sO4Sn8yBmfi2p4QWPBKVFGJVltRqhkIKtsHg4G8A0AJenr-9WqlLg1&_nc_ohc=ko0mHW-qWN8Q7kNvgFxa1eO&_nc_zt=23&_nc_ht=scontent.fdvo2-1.fna&_nc_gid=AQJk35KWl3Qnb4pGyLd1C5M&oh=00_AYBmqNrKnt_gX4auKsSsdRQbGUAxUzb2hnSMrQmI-0x1QQ&oe=67596C4C" alt="Team Member 3" style="width: 100%; height: 200px; object-fit: cover;">
+            <h3 style="font-size: 20px; margin: 10px 0; color: #007BFF;">Carmela C. Calague</h3>
+            <p style="font-size: 16px; color: #666; margin-bottom: 15px;">Computer Teacher/Adviser</p>
+            <a href="https://www.facebook.com/carmela.capucongcalague" target="_blank" style="display: block; padding: 10px; background-color: #007BFF; color: white; text-decoration: none; font-weight: bold; border-top: 1px solid #ddd;">Facebook Page</a>
+        </div>
+    </div>
+</section>
+
+   <h2 style="text-align: center; margin: 50px 0 20px;">Contact Us</h2>
+<section style="max-width: 600px; margin: 0 auto; background-color: white; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <form action="https://www.messenger.com/t/100079782781338" method="GET" target="_blank" style="margin-bottom: 30px;">
+        <div style="margin-bottom: 15px;">
+            <label for="name" style="display: block; font-weight: bold; margin-bottom: 5px; color: #007BFF;">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="email" style="display: block; font-weight: bold; margin-bottom: 5px; color: #007BFF;">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;">
+        </div>
+        <div style="margin-bottom: 15px;">
+            <label for="message" style="display: block; font-weight: bold; margin-bottom: 5px; color: #007BFF;">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Enter your message" required style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+        </div>
+        <button type="submit" style="width: 100%; padding: 10px; background-color: #007BFF; color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer;">Send to Messenger</button>
+    </form>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <p style="font-weight: bold; color: #007BFF;">Or Contact Us Directly</p>
+        <p style="margin: 5px 0;">📧 <a href="mailto:dkyle2449@gmail.com" style="color: #007BFF; text-decoration: none;">dkyle2449@gmail.com</a></p>
+        <p style="margin: 5px 0;">📞 <a href="tel:+639486152076" style="color: #007BFF; text-decoration: none;">+639486152076</a></p>
+    </div>
+</section>
+<footer style="text-align: center; padding: 20px; background-color: #333; color: white;">
+    <p>&copy; 2024 Tourism.co.<br>Grade 9-Our Lady of Beaterio<br>All rights reserved.</p>
+</footer>
+</body>
+</html>
+</body>
+</html>
